@@ -1,42 +1,59 @@
 <template>
-  <div class="head">
-    <div class="head-top">
-      <ul>
-        <li>主页</li>
-        <li>关于</li>
-        <li>相册</li>
-        <li>日志</li>
-      </ul>
+  <div class="swiper">
+    <div class="swiper-content">
+      <img :src="img" />
     </div>
   </div>
 </template>
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      img: require('../assets/img/1.jpg'),
+      imgUrl: [require('../assets/img/1.jpg'), require('../assets/img/2.jpg')]
+    }
+  },
+  mounted () {
+      this.sniper();
+  },
+  methods: {
+      sniper:function () {
+          let that = this
+          let i = 0;
+          setInterval(
+              function() {
+                if(i === 2) {
+                    i = 0;
+                }
+                that.img = that.imgUrl[i];
+                i++;
+              },2000
+          )
+      }
+  }
+}
 </script>
-<style  scoped>
-.head {
+<style scoped>
+.swiper {
+  height: 484px;
   width: 100%;
-  height: 54px;
-  line-height: 54px;
-  background: #FFFFFF;
 }
-.head-top{
-    text-align: center;
+.swiper-content {
+  margin: auto;
+  width: 90%;
+  height: 100%;
 }
-
-.head-top ul::after{
-    content: "";
-    clear: both;
-    visibility: hidden;
-    display: block;
-    height: 0;
+.swiper-content img {
+  width: 100%;
+  height: 100%;
 }
-ul{
-    display: inline-block;
+@media screen and (max-width: 1085px) {
+  .swiper-content {
+    width: 100%;
+  }
 }
-li{
-    /* display: inline; */
-    float: left;
-    padding: 0 20px;
+@media screen and (max-width: 765px) {
+}
+@media screen and (max-width: 530px) {
 }
 </style>

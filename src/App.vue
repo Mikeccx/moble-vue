@@ -12,8 +12,8 @@ export default {
   }
 }
 </script>
-<style>
-body,li,ul{
+<style lang='less'>
+body,li,ul,h3,p{
   padding: 0;
   margin: 0;
 }
@@ -23,12 +23,12 @@ li,ul{
   list-style: none;
 }
 [data-dpr="1"] div{
-    font-size: 12px;
+    font-size: 16px;
 }
 [data-dpr="2"] div{
-    font-size: 24px;
+    font-size: 32px;
 }
 [data-dpr="3"] div{
-    font-size: 36px;
+    font-size: 64px;
 }
 </style>
