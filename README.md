@@ -1,6 +1,6 @@
 # moble-vue
 # 链接
-[](http://148.70.128.231:8080/media)
+[链接](http://148.70.128.231:8080/media)
      
 ## Project setup
 ```
